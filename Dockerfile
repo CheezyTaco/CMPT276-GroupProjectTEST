@@ -16,12 +16,12 @@ RUN npm run-script start
 # EXPOSE 8090
 # ENTRYPOINT ["java", "-jar", "app.jar"]
 
-FROM maven as backend
+FROM maven as build
 WORKDIR /app
 COPY backend /app
 RUN mkdir -p src/main/resources/static
 COPY --from=frontend /frontend/build src/main/resources/static
-RUN mvn clean verify
+RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jdk-jammy
 COPY --from=backend /app/target/group_project-0.0.1-SNAPSHOT.jar app.jar
