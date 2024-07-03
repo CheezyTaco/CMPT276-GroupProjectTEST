@@ -2,6 +2,7 @@ FROM maven AS build
 WORKDIR /app
 COPY backend /app
 RUN mvn clean package -DskipTests
+RUN ls -la /app/target
 
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /backend
