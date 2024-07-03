@@ -4,7 +4,8 @@
   "description": "Group project for CMPT 276",
   "main": "index.js",
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "react scripts": "5.0.1"
   },
   "scripts": {
     "start": "concurrently \"npm:start-frontend\" \"npm:start-backend\"",
