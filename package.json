@@ -12,6 +12,6 @@
     "start-backend": "cd backend && mvnw spring-boot:run"
   },
   "engines":{
-    "node": ">=20.12.2"
+    "node": ">=22.4.0"
   }
 }
