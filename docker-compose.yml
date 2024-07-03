@@ -4,7 +4,7 @@ services:
   spring-boot-app:
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: ./backend/Dockerfile
     environment:
       NODE_ENV: production
     ports:
@@ -13,7 +13,7 @@ services:
   react-app:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: ./frontend/Dockerfile
     ports:
       - "3000:3000"
   
