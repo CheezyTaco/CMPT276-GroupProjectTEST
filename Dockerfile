@@ -1,7 +1,7 @@
 FROM node as frontend
 WORKDIR /app
 # COPY app .
-RUN npm ci
+# RUN npm ci
 RUN npm start
 
 FROM maven AS backend
