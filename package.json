@@ -4,12 +4,11 @@
   "description": "Group project for CMPT 276",
   "main": "index.js",
   "dependencies": {
-    "concurrently": "^8.2.2",
-    "react-scripts": "^1.0.3"
+    "concurrently": "^8.2.2"
   },
   "scripts": {
     "start": "concurrently \"npm:start-frontend\" \"npm:start-backend\"",
     "start-frontend": "cd frontend && npm start",
-    "start-backend": "cd backend && backend/mvnw spring-boot:run"
+    "start-backend": "cd backend && ./mvnw spring-boot:run"
   }  
 }
