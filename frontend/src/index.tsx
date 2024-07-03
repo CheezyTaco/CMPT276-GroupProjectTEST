@@ -8,6 +8,8 @@ import { Dashboard } from './components/pages/dashboard/dashboard';
 import { Login } from './components/pages/login/login';
 import { UserProvider } from './components/common/user-context/user-context';
 import { Register } from './components/pages/login/register';
+import { ThemeProvider, createTheme } from '@mui/material';
+import { Logout } from './components/pages/login/logout';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,23 +23,43 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
+    path: '/register',
+    element: <Register />,
+    errorElement: <ErrorPage />
+  },
+  {
     path: '/login',
     element: <Login />,
     errorElement: <ErrorPage />
   },
   {
-    path: '/register',
-    element: <Register />,
+    path: '/logout',
+    element: <Logout />,
     errorElement: <ErrorPage />
   }
 ]);
 
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: 'rgb(0, 124, 173)',
+      contrastText: 'rgb(255, 255, 255)'
+    },
+    secondary: {
+      main: 'rgb(255, 255, 255)',
+      contrastText: 'rgb(0, 0, 0)'
+    }
+  }
+})
+
 // Render the application with routes
 root.render(
   <React.StrictMode>
-    <UserProvider>
-      <RouterProvider router={router} />
-    </UserProvider>
+    <ThemeProvider theme={theme}>
+      <UserProvider>
+          <RouterProvider router={router} />
+      </UserProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

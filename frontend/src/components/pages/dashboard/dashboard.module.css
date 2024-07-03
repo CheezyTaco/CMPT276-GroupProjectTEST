@@ -1,10 +1,6 @@
-.page {
-  background-color: rgb(234, 229, 229);
-}
-
-.dashboardTitle {
-  color: darkorange;
-  text-align: center;
+.dashboardPage {
+  margin-top: 20px;
+  padding: 0 25px 70px;
 }
 
 table {

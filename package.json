@@ -10,6 +10,12 @@
   "scripts": {
     "start": "concurrently \"npm:start-frontend\" \"npm:start-backend\"",
     "start-frontend": "cd frontend && npm start",
+<<<<<<< HEAD
     "start-backend": "cd backend && ./mvnw spring-boot:run"
   }  
 }
+=======
+    "start-backend": "cd backend && mvnw spring-boot:run"
+  }
+}
+>>>>>>> 88ce346548c107f1cf128d415da895c1f93ab822
