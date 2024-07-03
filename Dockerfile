@@ -25,5 +25,5 @@ RUN mvn clean verify
 
 FROM eclipse-temurin:17-jdk-jammy
 COPY --from=backend /backend/target/group_project.jar app.jar
-EXPOSE 8080
+EXPOSE 8090
 CMD ["sh", "-c", "java -jar app.jar"]
