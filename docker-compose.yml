@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  spring-boot-app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "8090:8090"
+    
+  react-app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  
