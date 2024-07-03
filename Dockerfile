@@ -1,8 +1,8 @@
 FROM node as frontend
-WORKDIR /frontend
-COPY frontend .
+WORKDIR /app
+COPY app .
 RUN npm install
-RUN npm run-script start
+RUN npm start
 
 FROM maven AS backend
 WORKDIR /backend
