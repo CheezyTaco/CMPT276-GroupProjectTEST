@@ -15,13 +15,18 @@
 # COPY --from=backend /backend/target/group_project.jar app.jar
 # EXPOSE 8090
 # CMD ["sh", "-c", "java -Dserver.port=8080 -jar /app.jar"]
+FROM node AS frontend
+WORKDIR /app
+COPY . /app
+RUN npm install
+RUN npm start
+
 
 FROM maven AS build
 WORKDIR /app
 COPY backend /app
 RUN mvn clean package -DskipTests
 RUN ls -la /app/target
-RUN npm start
 
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /backend
