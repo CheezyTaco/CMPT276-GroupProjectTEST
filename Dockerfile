@@ -17,14 +17,16 @@
 # CMD ["sh", "-c", "java -Dserver.port=8080 -jar /app.jar"]
 
 FROM maven AS build
-WORKDIR /frontend
-COPY frontend .
-RUN npm install
-RUN npm run-script start
 WORKDIR /app
 COPY backend /app
 RUN mvn clean package -DskipTests
 RUN ls -la /app/target
+
+FROM node as frontend
+WORKDIR /frontend
+COPY frontend .
+RUN npm ci
+RUN npm run-script start
 
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /backend
