@@ -81,9 +81,11 @@ RUN npm run build
 FROM maven AS backend-build
 WORKDIR /app/backend
 COPY backend/pom.xml backend/mvnw backend/.mvn/ ./
+RUN ls -la
+RUN ./mvnw dependency:go-offline
 COPY backend/src/ ./src/
-COPY backend/ ./
-RUN mvnw clean package -DskipTests
+RUN ls -la ./src
+RUN ./mvnw clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
