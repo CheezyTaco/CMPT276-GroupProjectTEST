@@ -17,9 +17,11 @@
 # CMD ["sh", "-c", "java -Dserver.port=8080 -jar /app.jar"]
 
 FROM maven AS build
-WORKDIR /app
+WORKDIR /frontend
+COPY frontend .
 RUN npm install
 RUN npm run-script start
+WORKDIR /app
 COPY backend /app
 RUN mvn clean package -DskipTests
 RUN ls -la /app/target
