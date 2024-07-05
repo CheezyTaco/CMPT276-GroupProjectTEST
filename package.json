@@ -10,7 +10,6 @@
   "scripts": {
     "start": "concurrently \"npm:start-frontend\" \"npm:start-backend\"",
     "start-frontend": "cd frontend && npm install && npm start",
-    "start-backend": "cd backend && mvnw spring-boot:run"
-  },
-  "proxy": "https://routealert-1sb5.onrender.com"
+    "start-backend": "cd backend && ./mvnw spring-boot:run"
+  }
 }

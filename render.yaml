@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: webapp
+    env: node
+    buildCommand: |
+      cd frontend && npm install
+      cd backend && ./mvnw package
+    startCommand: |
+      concurrently "cd frontend && npm start" "cd backend && ./mvnw spring-boot:run"
