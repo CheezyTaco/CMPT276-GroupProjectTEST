@@ -82,7 +82,7 @@ FROM maven AS backend-build
 WORKDIR /app/backend
 COPY backend/pom.xml backend/mvnw backend/.mvn/ ./
 COPY backend/src/ ./src/
-RUN ./mvnw clean package -DskipTests
+RUN mvnw clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
