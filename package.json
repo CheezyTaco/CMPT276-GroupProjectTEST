@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm:start-frontend\" \"npm:start-backend\"",
-    "start-frontend": "cd frontend && npm install && npm start",
-    "start-backend": "cd backend && ./mvnw spring-boot:run"
+    "start-frontend": "cd frontend && npm start",
+    "start-backend": "cd backend && mvnw spring-boot:run"
   }
 }
