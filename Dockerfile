@@ -62,5 +62,6 @@ EXPOSE 3000 8090
 ENV CORS_ALLOWED_ORIGINS=http://10.0.0.14:3000
 ENV CORS_ALLOWED_ORIGINS=http://localhost:3000
 ENV CORS_ALLOWED_ORIGINS=https://cmpt276-groupprojecttest.onrender.com
+ENV CORS_ALLOWED_ORIGINS=http://cmpt276-groupprojecttest.onrender.com
 
 CMD ["java", "-jar", "/app/backend/app.jar"]
