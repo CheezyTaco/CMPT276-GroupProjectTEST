@@ -59,4 +59,6 @@ COPY --from=backend-builder /app/backend/target/*.jar /app/backend/app.jar
 
 EXPOSE 3000 8090
 
+ENV CORS_ALLOWED_ORIGINS=https://cmpt276-groupprojecttest.onrender.com
+
 CMD ["java", "-jar", "/app/backend/app.jar"]
