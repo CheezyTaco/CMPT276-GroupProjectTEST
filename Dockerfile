@@ -78,7 +78,7 @@ RUN npm install
 COPY frontend/ ./
 RUN npm run build
 
-FROM maven:3.8.6-openjdk-17 AS backend-build
+FROM maven AS backend-build
 WORKDIR /app/backend
 COPY backend/pom.xml backend/mvnw backend/.mvn/ ./
 COPY backend/src/ ./src/
