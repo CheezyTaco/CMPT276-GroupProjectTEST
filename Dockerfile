@@ -18,7 +18,8 @@
 
 FROM maven AS build
 WORKDIR /app
-RUN npm start
+RUN npm install
+RUN npm run-script start
 COPY backend /app
 RUN mvn clean package -DskipTests
 RUN ls -la /app/target
